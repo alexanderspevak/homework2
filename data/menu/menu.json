@@ -1,0 +1,17 @@
+[
+    {
+        "name":"pizza",
+        "id":1,
+        "price":5
+    },
+    {
+        "name":"pizza",
+        "id":2,
+        "price":6
+    },
+    {
+        "name":"cola",
+        "id":3,
+        "price":2
+    }
+]
