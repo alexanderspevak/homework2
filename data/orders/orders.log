@@ -1,3 +1,1 @@
-{"user":"a.spevak@gmail.com","amount":65,"status":"open","order":[{"id":1,"qty":5},{"id":2,"qty":6},{"id":3,"qty":2}],"timeCreated":"11/8/2018, 12:21:12 AM"}
-{"user":"alexandr.spevak@gmail.com","amount":65,"status":"open","order":[{"id":1,"qty":5},{"id":2,"qty":6},{"id":3,"qty":2}],"timeCreated":"11/8/2018, 12:22:33 AM"}
-{"user":"alexandeer.spevak@gmail.com","amount":65,"status":"open","order":[{"id":1,"qty":5},{"id":2,"qty":6},{"id":3,"qty":2}],"timeCreated":"11/8/2018, 12:22:59 AM"}
+{"user":"alexander.spevak@gmail.com","amount":78,"status":"closed","order":[{"qty":6,"id":"1","price":"5","name":"pizza"},{"qty":8,"id":"2","price":"6","name":"pizza"}],"timeCreated":"11/22/2018, 2:33:07 AM"}

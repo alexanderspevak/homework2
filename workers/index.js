@@ -18,7 +18,6 @@ workers.init = function () {
                         console.log('Please check logs, order status unknown')
                     }
                 })
-                console.log('closedLogs', closedLogs)
                 helpers.updateLog('orders', 'orders', openLogs, function (err) {
                     if (!err) {
                         console.log('Closed orders removed from active orders')

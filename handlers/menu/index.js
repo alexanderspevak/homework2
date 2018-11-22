@@ -5,7 +5,7 @@ module.exports=function(data,callback){
     if (data.queryString.email && token) {
         helpers.read('tokens', data.queryString.email.trim(), function (err, tokenData) {
             if (!err) {
-                if (token === tokenData.id) {
+                if (token == tokenData.id) {
                         helpers.read('menu', 'menu', function (err, menuData) {
                             if (!err) {
                                 callback(200,menuData)

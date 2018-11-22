@@ -44,7 +44,9 @@ var unifiedServer = (req, res) => {
     var buffer = '';
     var trimmedPathName = parsedUrl.pathname && parsedUrl.pathname.length > 0 ? parsedUrl.pathname.substring(1, parsedUrl.pathname.length).trim() : false
     var chosenHandler = router[trimmedPathName]
+    
 
+    
     req.on('data', function (data) {
         buffer += decoder.write(data)
     })
@@ -57,11 +59,29 @@ var unifiedServer = (req, res) => {
             'payload': helpers.parseJsonToObject(buffer)
         }
         if (chosenHandler) {
-            chosenHandler(data, function (statusCode, payload) {
+
+            chosenHandler(data, function (statusCode, payload,headerType) {
+
+                var contentType='application/json';
+                var payloadString = JSON.stringify(payload)
+                
+                if(headerType==='html'){
+                    payloadString=payload
+                    contentType='text/html';
+                }
+                if(headerType==='javascript'){
+                    payloadString=payload
+                    contentType='text/javascript';
+                }
+                if(headerType==='css'){
+                    payloadString=payload
+                    contentType='text/css';
+                }
+
                 statusCode = typeof (statusCode) === 'number' ? statusCode : 200
                 payload = typeof (payload) === 'object' ? payload : {};
-                var payloadString = JSON.stringify(payload)
-                res.setHeader('Content-Type', 'application/json')
+                
+                res.setHeader('Content-Type', contentType)
                 res.writeHead(statusCode)
                 res.end(payloadString)
             })

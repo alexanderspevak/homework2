@@ -16,7 +16,6 @@ module.exports = (data, callback) => {
                                     }
                                 })
                             }
-                     
                             if (existingOrdersCount > 0) {
                                 callback(400, { 'Error': 'You have unprocessed orders. Close before you create new one' })
                             } else {
@@ -58,8 +57,6 @@ module.exports = (data, callback) => {
                             callback(500, { 'Error': 'Could not read orders' })
                         }
                     })
-
-
                 } else {
                     callback(400, { 'Error': 'invalid token' })
                 }

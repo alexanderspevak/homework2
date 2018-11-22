@@ -3,7 +3,9 @@ var config = require('../../lib/config')
 
 module.exports = function (data, callback) {
     var token = data.headers.token ? data.headers.token.trim() : false
-    if (data.queryString.email && token) {
+    var email = data.queryString.email.trim()
+    var source = data.queryString.source.trim()
+    if (email && token && source) {
         helpers.read('tokens', data.queryString.email.trim(), function (err, tokenData) {
             if (!err) {
                 if (token === tokenData.id) {
@@ -26,8 +28,8 @@ module.exports = function (data, callback) {
                                         if (!err) {
                                             var paymentData = {
                                                 'amount': thisUsersActiveOrder.amount,
-                                                'source': config.stripe.source,
-                                                'description': 'Card payment amex',
+                                                'source': source,
+                                                'description': 'Card payment',
                                                 'currency': 'usd'
                                             }
                                             helpers.stripePayment(paymentData, function (err) {
@@ -45,6 +47,7 @@ module.exports = function (data, callback) {
                                                         }
                                                     })
                                                 } else {
+                                                    console.log(err)
                                                     callback(400, { 'Error': err })
                                                 }
                                             })
