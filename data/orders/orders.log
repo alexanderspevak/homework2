@@ -1,1 +1,1 @@
-{"user":"alexander.spevak@gmail.com","amount":78,"status":"closed","order":[{"qty":6,"id":"1","price":"5","name":"pizza"},{"qty":8,"id":"2","price":"6","name":"pizza"}],"timeCreated":"11/22/2018, 2:33:07 AM"}
+{"user":"alexander.spaevak@gmail.com","amount":1300,"status":"open","order":[{"id":1,"qty":100},{"id":2,"qty":100},{"id":3,"qty":100}],"timeCreated":"11/28/2018, 8:52:01 AM","id":"0up6vq4bp3cf78813jdx"}

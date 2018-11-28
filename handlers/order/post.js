@@ -35,7 +35,8 @@ module.exports = (data, callback) => {
                                                 'amount': amount,
                                                 'status': "open",
                                                 'order': data.payload,
-                                                'timeCreated':new Date(Date.now()).toLocaleString()
+                                                'timeCreated':new Date(Date.now()).toLocaleString(),
+                                                'id':helpers.createRandomString(20)
                                             }
                                             helpers.append('orders', 'orders', JSON.stringify(orderData), function (err) {
                                                 if (!err) {

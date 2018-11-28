@@ -13,7 +13,8 @@ module.exports = function (data, callback) {
                         'email': email,
                         'street': street,
                         'name': name,
-                        'password': hashedPassword
+                        'password': hashedPassword,
+                        'timeCreated':new Date(Date.now()).toLocaleString(),
                     }
                     helpers.create('users',data.email,data,function(statusCode,err){
                         if(statusCode===200){
